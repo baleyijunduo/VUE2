@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <p>{{count}}</p>
+        <!-- 用v-on绑定事件 -->
+        <!-- 还可以传参 -->
+        <!-- v-on可以被简写成@ -->
+        <button @click='addCount(5)'>+1</button>
+        <button @click='subCount(5)'>-1</button>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+               count:0
+            },
+            // methods用来定义事件的处理函数
+            methods:{
+                addCount(n){
+                    this.count+= n;
+                },
+                subCount(n){
+                    this.count-=n;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

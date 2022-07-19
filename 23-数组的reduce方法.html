@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        const arr = [
+        {price:10,id:1,name:'雷浩',state:true,count:1},
+        {price:20,id:2,name:'浩浩',state:false,count:3},
+        {price:30,id:3,name:'小浩',state:false,count:6},
+        {price:40,id:4,name:'小雷浩',state:true,count:9},
+    ];
+
+    // 先用filter函数根据state筛选数组
+    // reduce的语法格式：reduce((累加结果,当前循环项) =>{},初始值 )
+    // reduce是一个累加器
+   const res =  arr.filter(item => item.state).reduce((amt,item) => {
+        return amt += item.price * item.count;
+    },0)
+
+    console.log(res);
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 利用v-bind指令为属性动态绑定值 -->
+        <!-- v-bind指令可以简写为一个: -->
+        <input type="text" name="" id="" v-bind:placeholder="tips">
+        <!-- 也可以绑定图片链接 -->
+        <img :src="photo" alt="" style="height:100px;">
+        <!-- 插值表达式也可以做运算 -->
+        <div>1 + 2的结果是{{1+2}}</div>
+        <div>{{tips}}反过来是{{tips.split('').reverse().join('')}}</div>
+        <div :title="'box' + index">这是一个div</div>
+    </div>
+</body>
+<script src="./lib/vue-2.6.12.js"></script>
+<script>
+    const vm = new Vue({
+        el:'#app',
+        data:{
+            tips:'请输入姓名',
+            photo:'https://cn.vuejs.org/images/logo.svg',
+            index:1
+        }
+    })
+</script>
+</html>

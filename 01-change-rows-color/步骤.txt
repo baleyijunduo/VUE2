@@ -1,0 +1,16 @@
+1.新建项目空白目录，并运行npm init -y命令，初始化包管理配置文件package.json
+2.新建src源代码目录
+3.新建src -> index.html首页和src -> index.js 脚本文件
+4.初始化首页基本结构
+5.运行npm install jquery -S命令,安装jQuery
+6.通过ES6模块方式导入jQuery，实现功能
+7.执行npm install webpack@5.42.1 webpack-cli@4.7.2 -D命令
+（用-D命令和-S命令存放的地方不一样）
+（-D安装只在开发阶段用到的包，-S安装开发上线都用到的包）
+8.创建webpack.config.js配置文件并初始化
+9.在package.json的script节点下新增dev脚本
+10.安装webpack-dev-server(类似node.js)
+    npm install webpack-dev-server@3.11.2 -D
+    配置package.json的script节点，webpack serve
+    最后执行npm run dev
+11.安装html_webpack-plugin(自定义index.html页面内容)

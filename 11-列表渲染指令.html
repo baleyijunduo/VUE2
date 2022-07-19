@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css">
+</head>
+<body>
+    <div id="app">
+       <table class="table table-border table-hover table-striped">
+            <thead>
+                <th>索引</th>
+                <th>ID</th>
+                <th>姓名</th>
+            </thead>
+            <tbody>
+                <!-- item和index都是形参 -->
+                <!-- item可以指定每一项，index是索引 -->
+                <!-- tr也可以引用item -->
+                <!-- 官方建议用到v-for指令时，一定要绑定一个:key属性 -->
+                <!-- 尽量用id作为key的值 -->
+                <tr v-for="(item,index) in list" :title="item.name" :key = "item.id">
+                    <td>{{index}}</td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                </tr>
+            </tbody>
+       </table>
+    </div>
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                list:[
+                    {id:1,name:'haohao'},
+                    {id:2,name:'xiaohao'},
+                    {id:3,name:'leihao'}
+                ]
+            },
+            methods: {
+                show(){
+
+                }
+            },
+        });
+    </script>
+</body>
+</html>

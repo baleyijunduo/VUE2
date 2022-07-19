@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model = "username">
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                username:''
+            },
+            // 所有侦听器都要定义在watch中
+            watch:{
+                // 侦听器本质上是一个函数，监听数据变化
+                username(newval,oldval){
+                    console.log(newval + oldval);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
